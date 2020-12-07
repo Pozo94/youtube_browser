@@ -1,12 +1,12 @@
 import React from 'react';
 import VideoItem from   './VideoItem'
-const  VideoList =(props)=>{
+const  VideoList =({videos,onVideoSelect})=>{
 
-    const rendeList = props.videos.map((video)=>{
+    const rendeList = videos.map((video)=>{
         if (video.id.videoId) {
-            return <VideoItem key={video.id.videoId} video={video}/>
+            return <VideoItem onVideoSelect={onVideoSelect} key={video.id.videoId} video={video}/>
         }else {
-            return <VideoItem key={video.id.channelId} video={video}/>
+            return <VideoItem onVideoSelect={onVideoSelect} key={video.id.channelId} video={video}/>
         }
 
     })
